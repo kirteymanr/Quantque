@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantQue - Data Science & Models</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <!-- Q logo: circle with global grid lines -->
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17" cy="17" r="14" fill="#0b192e"/>
+                        <circle cx="17" cy="17" r="14" stroke="#2563eb" stroke-width="3"/>
+                        <path d="M7 17H27" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+                        <path d="M17 7V27" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+                        <path d="M10 10C12 12.5 12 21.5 10 24" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5"/>
+                        <path d="M24 10C22 12.5 22 21.5 24 24" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">QUANTQUE</span>
+                    <span class="logo-tagline">Analyze. Model. Discover.</span>
+                </div>
+            </div>
+            
+            <nav class="nav-links">
+                <div class="nav-item">
+                    Tools
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+                <a href="#blog" class="nav-item">Blogs</a>
+                <a href="#about" class="nav-item">About</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag">Statistical Analysis Made Simple</span>
+                <h1 class="hero-title">Powerful Tools for Smarter Data Analysis</h1>
+                <p class="hero-desc">
+                    Perform regression analysis, curve fitting, time series forecasting, hypothesis testing and much more – all in your browser.
+                </p>
+                <div class="hero-actions">
+                    <a href="../index.html" class="btn btn-blue">
+                        Try Linear Regression 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="#tools" class="btn btn-outline">Explore All Tools</a>
+                </div>
+                <div class="hero-notice">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <span>Only Linear Regression is available now. More tools coming soon!</span>
+                </div>
+            </div>
+            
+            <div class="hero-graphic">
+                <div class="mockup-grid">
+                    <!-- Top Left Card: Scatter Plot -->
+                    <div class="mockup-card">
+                        <div class="card-header-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <svg class="chart-svg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid lines -->
+                            <line x1="28" y1="20" x2="180" y2="20" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="40" x2="180" y2="40" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="60" x2="180" y2="60" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="80" x2="180" y2="80" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="100" x2="180" y2="100" stroke="#334155" stroke-width="1.5"/>
+                            <line x1="28" y1="10" x2="28" y2="100" stroke="#334155" stroke-width="1.5"/>
+                            
+                            <!-- Left tick labels -->
+                            <text x="10" y="23" fill="#475569" font-size="8" font-family="sans-serif">18</text>
+                            <text x="10" y="43" fill="#475569" font-size="8" font-family="sans-serif">16</text>
+                            <text x="10" y="63" fill="#475569" font-size="8" font-family="sans-serif">14</text>
+                            <text x="10" y="83" fill="#475569" font-size="8" font-family="sans-serif">12</text>
+                            
+                            <!-- Regression trendline -->
+                            <line x1="38" y1="90" x2="170" y2="30" stroke="#00d8f6" stroke-width="2.5"/>
+                            
+                            <!-- Scatter points -->
+                            <circle cx="45" cy="85" r="3.5" fill="#2563eb"/>
+                            <circle cx="60" cy="72" r="3.5" fill="#00d8f6"/>
+                            <circle cx="75" cy="80" r="3.5" fill="#2563eb"/>
+                            <circle cx="90" cy="58" r="3.5" fill="#00d8f6"/>
+                            <circle cx="105" cy="52" r="3.5" fill="#2563eb"/>
+                            <circle cx="120" cy="62" r="3.5" fill="#00d8f6"/>
+                            <circle cx="135" cy="45" r="3.5" fill="#2563eb"/>
+                            <circle cx="150" cy="38" r="3.5" fill="#00d8f6"/>
+                            <circle cx="165" cy="35" r="3.5" fill="#2563eb"/>
+                            <circle cx="175" cy="42" r="3.5" fill="#00d8f6"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Top Right Card: Bell Curve -->
+                    <div class="mockup-card">
+                        <div class="card-header-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <svg class="chart-svg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Axes -->
+                            <line x1="15" y1="105" x2="185" y2="105" stroke="#334155" stroke-width="1.5"/>
+                            <line x1="100" y1="20" x2="100" y2="105" stroke="#10203e" stroke-dasharray="2 2"/>
+                            
+                            <!-- Bell curve area fill -->
+                            <path d="M 20 105 C 60 105, 80 25, 100 25 C 120 25, 140 105, 180 105 Z" fill="rgba(6, 182, 212, 0.05)"/>
+                            
+                            <!-- Bell curve -->
+                            <path d="M 20 105 C 60 105, 80 25, 100 25 C 120 25, 140 105, 180 105" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                            
+                            <!-- Normal shaded area -->
+                            <path d="M 65 105 C 78 105, 85 45, 100 45 C 115 45, 122 105, 135 105 Z" fill="rgba(0, 216, 246, 0.15)"/>
+                            <path d="M 65 105 C 78 105, 85 45, 100 45 C 115 45, 122 105, 135 105" stroke="#00d8f6" stroke-width="1.5" stroke-dasharray="2 2" fill="none"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Bottom Card: Time Series -->
+                    <div class="mockup-card mockup-card-large">
+                        <div class="card-header-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <svg class="chart-svg" viewBox="0 0 420 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid lines -->
+                            <line x1="28" y1="20" x2="400" y2="20" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="45" x2="400" y2="45" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="70" x2="400" y2="70" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="95" x2="400" y2="95" stroke="#10203e" stroke-width="0.75"/>
+                            <line x1="28" y1="110" x2="400" y2="110" stroke="#334155" stroke-width="1.5"/>
+                            
+                            <!-- Vertical grid columns -->
+                            <line x1="28" y1="20" x2="28" y2="110" stroke="#334155" stroke-width="1.5"/>
+                            <line x1="75" y1="20" x2="75" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="120" y1="20" x2="120" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="165" y1="20" x2="165" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="210" y1="20" x2="210" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="255" y1="20" x2="255" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="300" y1="20" x2="300" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="345" y1="20" x2="345" y2="110" stroke="#10203e" stroke-dasharray="2 2"/>
+                            <line x1="400" y1="20" x2="400" y2="110" stroke="#334155" stroke-width="1.5"/>
+                            
+                            <!-- Left tick labels -->
+                            <text x="12" y="23" fill="#475569" font-size="8" font-family="sans-serif">2</text>
+                            <text x="12" y="48" fill="#475569" font-size="8" font-family="sans-serif">1</text>
+                            <text x="12" y="73" fill="#475569" font-size="8" font-family="sans-serif">0</text>
+                            <text x="10" y="98" fill="#475569" font-size="8" font-family="sans-serif">-1</text>
+                            
+                            <!-- Uncertainty shaded area -->
+                            <path d="M 28 70 Q 50 78, 75 62 T 120 70 T 165 42 T 210 50 T 255 35 T 300 45 T 345 32 T 400 24 L 400 58 Q 345 68, 300 75 T 255 60 T 210 78 T 165 72 T 120 90 T 75 80 L 28 88 Z" fill="rgba(37, 99, 235, 0.1)"/>
+                            
+                            <!-- Main wavy time series line -->
+                            <path d="M 28 80 Q 50 85, 75 70 T 120 80 T 165 52 T 210 60 T 255 45 T 300 58 T 345 42 T 400 32" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                            
+                            <!-- Axis labels -->
+                            <text x="23" y="122" fill="#475569" font-size="8" font-family="sans-serif">2016</text>
+                            <text x="68" y="122" fill="#475569" font-size="8" font-family="sans-serif">2017</text>
+                            <text x="113" y="122" fill="#475569" font-size="8" font-family="sans-serif">2018</text>
+                            <text x="158" y="122" fill="#475569" font-size="8" font-family="sans-serif">2019</text>
+                            <text x="203" y="122" fill="#475569" font-size="8" font-family="sans-serif">2020</text>
+                            <text x="248" y="122" fill="#475569" font-size="8" font-family="sans-serif">2021</text>
+                            <text x="293" y="122" fill="#475569" font-size="8" font-family="sans-serif">2022</text>
+                            <text x="338" y="122" fill="#475569" font-size="8" font-family="sans-serif">2023</text>
+                            <text x="383" y="122" fill="#475569" font-size="8" font-family="sans-serif">2024</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bar Section -->
+    <section class="features-bar">
+        <div class="container features-row">
+            <!-- Item 1 -->
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.48 0-.96.06-1.42.17A6 6 0 0 0 3 11.5C3 14.52 5.5 17 8.5 17h9Z"/></svg>
+                </div>
+                <div class="feature-content">
+                    <span class="feature-title">No Installation</span>
+                    <span class="feature-desc">100% online</span>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="feature-content">
+                    <span class="feature-title">Accurate & Reliable</span>
+                    <span class="feature-desc">Statistically sound</span>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+                </div>
+                <div class="feature-content">
+                    <span class="feature-title">Interactive Results</span>
+                    <span class="feature-desc">Beautiful visualizations</span>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="feature-content">
+                    <span class="feature-title">Export Easily</span>
+                    <span class="feature-desc">PDF, Excel, CSV</span>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="feature-content">
+                    <span class="feature-title">Secure & Private</span>
+                    <span class="feature-desc">Your data is safe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Statistical Tools Section -->
+    <section id="tools" class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Tools</h2>
+            <p class="section-desc">A comprehensive suite of statistical analysis tools.</p>
+        </div>
+        
+        <!-- Row 1: 5 columns -->
+        <div class="tools-grid tools-grid-5">
+            <!-- Tool 1: Linear Regression -->
+            <div class="tool-card tool-card-available">
+                <span class="card-badge badge-available">Available Now</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="35" x2="35" y2="35" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="5" y1="35" x2="5" y2="5" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="8" y1="30" x2="32" y2="10" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="11" cy="24" r="2.5" fill="#60a5fa"/>
+                        <circle cx="16" cy="16" r="2.5" fill="#3b82f6"/>
+                        <circle cx="19" cy="25" r="2.5" fill="#60a5fa"/>
+                        <circle cx="24" cy="13" r="2.5" fill="#3b82f6"/>
+                        <circle cx="28" cy="18" r="2.5" fill="#60a5fa"/>
+                        <circle cx="32" cy="8" r="2.5" fill="#3b82f6"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Linear Regression</h3>
+                <p class="tool-desc">Simple & multiple linear regression</p>
+                <a href="../index.html" class="btn btn-blue btn-card">
+                    Launch Tool
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Tool 2: Nonlinear Curve Fitting -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="35" x2="35" y2="35" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="5" y1="35" x2="5" y2="5" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M 8 30 Q 18 8 24 20 T 34 8" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                        <circle cx="11" cy="25" r="2" fill="#34d399"/>
+                        <circle cx="15" cy="16" r="2" fill="#10b981"/>
+                        <circle cx="20" cy="15" r="2" fill="#34d399"/>
+                        <circle cx="24" cy="20" r="2" fill="#10b981"/>
+                        <circle cx="28" cy="14" r="2" fill="#34d399"/>
+                        <circle cx="32" cy="9" r="2" fill="#10b981"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Nonlinear Curve Fitting</h3>
+                <p class="tool-desc">Polynomial, exponential, logistic & more</p>
+            </div>
+
+            <!-- Tool 3: Time Series Analysis -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="35" x2="35" y2="35" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="5" y1="35" x2="5" y2="5" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M 7 24 L 11 18 L 15 26 L 20 12 L 24 20 L 29 8 L 33 14" stroke="#8b5cf6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Time Series Analysis</h3>
+                <p class="tool-desc">ARIMA, SARIMA, ETS, decomposition</p>
+            </div>
+
+            <!-- Tool 4: ANOVA -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="10" y1="10" x2="10" y2="30" stroke="#f59e0b" stroke-width="1.5"/>
+                        <line x1="7" y1="10" x2="13" y2="10" stroke="#f59e0b" stroke-width="1.5"/>
+                        <line x1="7" y1="30" x2="13" y2="30" stroke="#f59e0b" stroke-width="1.5"/>
+                        <rect x="6" y="15" width="8" height="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="1" rx="1"/>
+                        
+                        <line x1="20" y1="6" x2="20" y2="26" stroke="#f59e0b" stroke-width="1.5"/>
+                        <line x1="17" y1="6" x2="23" y2="6" stroke="#f59e0b" stroke-width="1.5"/>
+                        <line x1="17" y1="26" x2="23" y2="26" stroke="#f59e0b" stroke-width="1.5"/>
+                        <rect x="16" y="11" width="8" height="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="1" rx="1"/>
+                        
+                        <line x1="30" y1="14" x2="30" y2="34" stroke="#f59e0b" stroke-width="1.5"/>
+                        <line x1="27" y1="14" x2="33" y2="14" stroke="#f59e0b" stroke-width="1.5"/>
+                        <line x1="27" y1="34" x2="33" y2="34" stroke="#f59e0b" stroke-width="1.5"/>
+                        <rect x="26" y="19" width="8" height="10" fill="#fbbf24" stroke="#f59e0b" stroke-width="1" rx="1"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">ANOVA</h3>
+                <p class="tool-desc">One-way, two-way & repeated measures</p>
+            </div>
+
+            <!-- Tool 5: Hypothesis Testing -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 4 32 C 10 32, 12 12, 17 12 C 22 12, 24 32, 30 32" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                        <path d="M 12 32 C 18 32, 20 12, 25 12 C 30 12, 32 32, 38 32" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="2 2" fill="none"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Hypothesis Testing</h3>
+                <p class="tool-desc">t-test, z-test, chi-square, and more</p>
+            </div>
+        </div>
+        
+        <!-- Row 2: 6 columns -->
+        <div class="tools-grid tools-grid-6">
+            <!-- Tool 6: Logistic Regression -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="35" x2="35" y2="35" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="5" y1="35" x2="5" y2="5" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M 7 32 C 16 32, 14 8, 33 8" stroke="#f97316" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Logistic Regression</h3>
+                <p class="tool-desc">Binary & multinomial logistic regression</p>
+            </div>
+
+            <!-- Tool 7: ROC Analysis -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="35" x2="35" y2="35" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <line x1="5" y1="35" x2="5" y2="5" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <line x1="5" y1="35" x2="35" y2="5" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+                        <path d="M 5 35 C 5 15, 15 5, 35 5" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">ROC Analysis</h3>
+                <p class="tool-desc">Evaluate diagnostic performance</p>
+            </div>
+
+            <!-- Tool 8: Survival Analysis -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="35" x2="35" y2="35" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <line x1="5" y1="35" x2="5" y2="5" stroke="#cbd5e1" stroke-width="1.5"/>
+                        <path d="M 5 8 H 12 V 15 H 20 V 24 H 28 V 30 H 35" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Survival Analysis</h3>
+                <p class="tool-desc">Kaplan–Meier, Cox regression</p>
+            </div>
+
+            <!-- Tool 9: Power Analysis -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 23 4 L 9 22 H 19 L 17 36 L 31 18 H 21 L 23 4 Z" fill="#e9d5ff" stroke="#a855f7" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Power Analysis</h3>
+                <p class="tool-desc">Calculate statistical power</p>
+            </div>
+
+            <!-- Tool 10: Sample Size Calculator -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="5" width="24" height="30" rx="3" stroke="#2563eb" stroke-width="2"/>
+                        <rect x="12" y="9" width="16" height="6" fill="#bfdbfe" rx="1"/>
+                        <circle cx="13" cy="20" r="1.5" fill="#2563eb"/>
+                        <circle cx="20" cy="20" r="1.5" fill="#2563eb"/>
+                        <circle cx="27" cy="20" r="1.5" fill="#2563eb"/>
+                        <circle cx="13" cy="25" r="1.5" fill="#2563eb"/>
+                        <circle cx="20" cy="25" r="1.5" fill="#2563eb"/>
+                        <circle cx="27" cy="25" r="1.5" fill="#2563eb"/>
+                        <circle cx="13" cy="30" r="1.5" fill="#2563eb"/>
+                        <circle cx="20" cy="30" r="1.5" fill="#2563eb"/>
+                        <circle cx="27" cy="30" r="1.5" fill="#2563eb"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">Sample Size Calculator</h3>
+                <p class="tool-desc">Determine required sample size</p>
+            </div>
+
+            <!-- Tool 11: DOE & Optimization -->
+            <div class="tool-card tool-card-disabled">
+                <span class="card-badge badge-soon">Coming Soon</span>
+                <div class="tool-icon-wrapper">
+                    <svg width="42" height="42" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 20 8 L 32 15 V 27 L 20 34 L 8 27 V 15 L 20 8 Z" stroke="#f97316" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M 8 15 L 20 22 L 32 15" stroke="#f97316" stroke-width="1.5" stroke-linejoin="round"/>
+                        <line x1="20" y1="22" x2="20" y2="34" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="20" cy="8" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="32" cy="15" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="32" cy="27" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="20" cy="34" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="8" cy="27" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="8" cy="15" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                        <circle cx="20" cy="22" r="2" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3 class="tool-name">DOE & Optimization</h3>
+                <p class="tool-desc">Design experiments & optimize responses</p>
+            </div>
+        </div>
+        
+        <div class="center-action">
+            <button class="btn btn-view-all">View All Tools</button>
+        </div>
+    </section>
+
+    <!-- Latest from the Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <div class="blog-header">
+                <div class="blog-header-left">
+                    <h2 class="section-title">Latest from the Blog</h2>
+                </div>
+                <a href="blogs/p_value_illusion.html" class="blog-view-all-link">
+                    View All Blogs 
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+            
+            <div class="featured-blog-container">
+                <a href="blogs/p_value_illusion.html" class="featured-blog-card">
+                    <div class="featured-blog-image">
+                        <svg width="100%" height="100%" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Horizontal axis -->
+                            <line x1="15" y1="100" x2="185" y2="100" stroke="#94a3b8" stroke-width="1.5"/>
+                            <!-- Bell curve -->
+                            <path d="M 20 100 C 60 100, 80 25, 100 25 C 120 25, 140 100, 180 100" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+                            <!-- Shaded p-value tail area -->
+                            <path d="M 140 90 C 150 96, 160 100, 180 100 L 140 100 Z" fill="rgba(239, 68, 68, 0.15)"/>
+                            <!-- Alpha cutoff vertical line -->
+                            <line x1="140" y1="25" x2="140" y2="100" stroke="#ef4444" stroke-dasharray="3 3" stroke-width="1.5"/>
+                            <!-- Text labels -->
+                            <text x="145" y="45" fill="#ef4444" font-size="8" font-family="sans-serif" font-weight="700">p-value</text>
+                            <text x="75" y="60" fill="#2563eb" font-size="8" font-family="sans-serif" font-weight="700">α = 0.05</text>
+                            <!-- Tiny effect mean shift representation -->
+                            <circle cx="100" cy="25" r="2.5" fill="#2563eb"/>
+                            <line x1="100" y1="25" x2="100" y2="100" stroke="#2563eb" stroke-dasharray="2 2" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="featured-blog-content">
+                        <span class="blog-badge">Statistics Basics</span>
+                        <h3 class="featured-blog-title">The P-Value Illusion: When Large Samples Make Tiny Effects Look Important</h3>
+                        <p class="featured-blog-desc">A deep dive into why extremely large datasets can produce statistically significant p-values for negligible real-world differences.</p>
+                        <span class="featured-blog-date">May 13, 2024</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Analyze Your Data in 4 Simple Steps</h2>
+            </div>
+            
+            <div class="steps-row">
+                <!-- Step 1 -->
+                <div class="step-item">
+                    <div class="step-icon-container">
+                        <span class="step-number">1</span>
+                        <!-- Target/bulls-eye -->
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Choose a Tool</h3>
+                    <p class="step-desc">Select the appropriate analysis method.</p>
+                    <span class="step-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </span>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-item">
+                    <div class="step-icon-container">
+                        <span class="step-number">2</span>
+                        <!-- Cloud upload icon -->
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 13V22" />
+                            <polyline points="9 16 12 13 15 16" />
+                            <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Upload Data</h3>
+                    <p class="step-desc">Upload your data in CSV, Excel or paste directly.</p>
+                    <span class="step-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </span>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-item">
+                    <div class="step-icon-container">
+                        <span class="step-number">3</span>
+                        <!-- Bar chart with arrow -->
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                            <path d="M3 3v18h18" />
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Run Analysis</h3>
+                    <p class="step-desc">Get instant results with interactive visualizations.</p>
+                    <span class="step-arrow">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </span>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-item">
+                    <div class="step-icon-container">
+                        <span class="step-number">4</span>
+                        <!-- Download file icon -->
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Export Results</h3>
+                    <p class="step-desc">Download tables, plots and reports easily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <div class="footer-logo-container">
+                    <!-- Footer Q logo -->
+                    <svg width="28" height="28" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17" cy="17" r="14" fill="#0b192e"/>
+                        <circle cx="17" cy="17" r="14" stroke="#ffffff" stroke-width="3"/>
+                        <path d="M7 17H27" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+                        <path d="M17 7V27" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"/>
+                        <path d="M10 10C12 12.5 12 21.5 10 24" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5"/>
+                        <path d="M24 10C22 12.5 22 21.5 24 24" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1.5"/>
+                    </svg>
+                    <span class="footer-logo-text">QUANTQUE</span>
+                </div>
+                <p class="footer-brand-desc">
+                    Quantque provides a comprehensive suite of online statistical tools for modern data analysis.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 1: Tools -->
+            <div>
+                <h4 class="footer-column-title">Tools</h4>
+                <ul class="footer-links-list">
+                    <li><a href="../index.html">Linear Regression</a></li>
+                    <li><a href="#">All Tools (Coming Soon)</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Blogs -->
+            <div>
+                <h4 class="footer-column-title">Blogs</h4>
+                <ul class="footer-links-list">
+                    <li><a href="blogs/p_value_illusion.html">All Articles</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Company -->
+            <div>
+                <h4 class="footer-column-title">Company</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Legal -->
+            <div>
+                <h4 class="footer-column-title">Legal</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5: Stay Updated -->
+            <div class="footer-subscribe">
+                <h4 class="footer-column-title">Stay Updated</h4>
+                <p class="subscribe-desc">Subscribe to get the latest updates, tips and articles.</p>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" class="subscribe-input">
+                    <button class="subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2024 Quantque. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
