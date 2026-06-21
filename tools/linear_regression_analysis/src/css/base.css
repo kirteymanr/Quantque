@@ -1,0 +1,59 @@
+/* base.css - CSS Resets, Typography, and Variables */
+
+:root {
+    --primary-color: #0a4cd0;
+    --primary-hover: #0033aa;
+    --header-bg: #003fa6;
+    --bg-color: #f0f2f5;
+    --surface-color: #ffffff;
+    --text-main: #333333;
+    --text-muted: #555555;
+    --border-color: #d1d5db;
+    --radius: 4px;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Semantic Colors */
+    --success-bg: #e6f4ea;
+    --success-text: #1e7e34;
+    --info-bg: #e8f0fe;
+    --info-text: #1967d2;
+    --warning-bg: #fef7e0;
+    --warning-text: #b06000;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Typography utilities */
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.text-muted { color: var(--text-muted); }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: 600; }
