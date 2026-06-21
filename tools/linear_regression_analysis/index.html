@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Analysis</title>
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Header -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 3 3 21 21 21"/><polyline points="7 15 12 9 16 14 21 6"/></svg>
+                <h1>Statistical Analysis</h1>
+            </div>
+            <nav class="top-nav">
+                <div class="nav-item active">Linear Regression</div>
+                <div class="nav-item">Curve Fitting <span class="badge">Coming Soon</span></div>
+                <div class="nav-item">Polynomial Regression <span class="badge">Coming Soon</span></div>
+                <div class="nav-item">Time Series Analysis <span class="badge">Coming Soon</span></div>
+            </nav>
+            <button class="icon-btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                About
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <div id="error-banner" class="alert alert-info" style="display: none; background-color: #fee2e2; border-color: #f87171; color: #991b1b;"></div>
+
+            <!-- Top Ad Panel -->
+            <div class="ad-panel banner-ad">
+                <div class="ad-title">Ad Panel (Top Banner)</div>
+                <div class="ad-size">728 x 90</div>
+            </div>
+
+            <div class="main-layout-with-ads">
+                <div class="dashboard-grid">
+                    
+                    <!-- === LEFT COLUMN: CONTROLS === -->
+                    <div class="col-left flex-col">
+                        <div class="section-title">1. DATA INPUT</div>
+                        <div class="card">
+                            <div class="form-group">
+                                <label>Select Data Source</label>
+                                <select id="data-source-select">
+                                    <option>Upload CSV File</option>
+                                    <option>Paste Data Table</option>
+                                </select>
+                            </div>
+                            
+                            <div class="file-upload-box" id="file-drop-zone" onclick="document.getElementById('csv-file-input').click()" style="cursor: pointer; border: 1px dashed var(--border-color); background: white;">
+                                <div class="file-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                </div>
+                                <div class="file-details">
+                                    <div class="file-name" id="file-name-display">Select CSV File</div>
+                                    <div class="file-meta" id="file-meta-display">No file selected</div>
+                                </div>
+                                <div id="file-success-tick" style="color: #10b981; display: none;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                            </div>
+                            <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+
+                            <div id="paste-area" style="display: none;">
+                                <label style="font-size: 0.875rem; font-weight: 500; margin-bottom: 6px; display:block;">Or Paste Data Here:</label>
+                                <div class="table-container" style="max-height: 200px; overflow-y: auto; margin-bottom: 16px;">
+                                    <table id="data-table" class="data-table">
+                                        <thead><tr><th contenteditable="true">X</th><th contenteditable="true">Y</th></tr></thead>
+                                        <tbody><tr><td contenteditable="true"></td><td contenteditable="true"></td></tr></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="y-var-select">Dependent Variable (Y)</label>
+                                <select id="y-var-select"><option value="1">Price</option></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="x-var-select">Independent Variable (X)</label>
+                                <select id="x-var-select"><option value="0">Size (sq ft)</option></select>
+                            </div>
+
+                            <div class="alert alert-info">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                <div>Simple Linear Regression with 1 independent variable</div>
+                            </div>
+                        </div>
+
+                        <div class="section-title">2. ANALYSIS OPTIONS</div>
+                        <div class="card flex-1">
+                            <div class="form-group">
+                                <label>Confidence Level (%)</label>
+                                <select id="confidence-level">
+                                    <option value="95">95</option>
+                                    <option value="99">99</option>
+                                    <option value="90">90</option>
+                                </select>
+                            </div>
+                            <label class="checkbox-group">
+                                <input type="checkbox" id="show-reg-line" checked> Show Regression Line
+                            </label>
+                            <label class="checkbox-group">
+                                <input type="checkbox" id="show-conf-int"> Show Confidence Interval (Mean)
+                            </label>
+                            <label class="checkbox-group">
+                                <input type="checkbox" id="show-pred-int"> Show Prediction Interval
+                            </label>
+                            <label class="checkbox-group" style="margin-bottom: 24px;">
+                                <input type="checkbox" id="show-res-plot"> Show Residuals Plot
+                            </label>
+
+                            <div class="btn-group" style="margin-top: auto;">
+                                <button id="calculate-btn" class="btn btn-primary" style="margin-bottom: 8px;">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    Run Analysis
+                                </button>
+                                <button id="export-btn" class="btn btn-outline" style="display:flex; justify-content:space-between; align-items:center;">
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                        Export Results
+                                    </div>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === MIDDLE COLUMN: PLOTS & CORE STATS === -->
+                    <div class="col-middle flex-col">
+                        <div class="section-title">3. REGRESSION PLOT</div>
+                        <div class="card">
+                            <div id="scatter-plot" class="plot-container"></div>
+                        </div>
+
+                        <div class="grid-2-col" style="align-items: start; margin-bottom: 24px;">
+                            <div>
+                                <div class="section-title">4. REGRESSION EQUATION</div>
+                                <div class="card bg-light-green equation-card">
+                                    <p id="eq-display" class="eq-text">Ŷ = ...</p>
+                                    <div class="eq-legend">
+                                        <p>Where:</p>
+                                        <p>Ŷ = Predicted Y</p>
+                                        <p>X = Independent Variable</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="section-title">5. MODEL SUMMARY</div>
+                                <div class="card p-0">
+                                    <table class="data-table table-vertical">
+                                        <tbody>
+                                            <tr><td>Multiple R</td><td id="val-multi-r">-</td></tr>
+                                            <tr><td>R Square (R²)</td><td id="val-r2">-</td></tr>
+                                            <tr><td>Adjusted R²</td><td id="val-adj-r2">-</td></tr>
+                                            <tr><td>Standard Error</td><td id="val-std-err">-</td></tr>
+                                            <tr><td>Observations</td><td id="val-obs">-</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-title">6. ANOVA TABLE</div>
+                        <div class="card p-0 flex-1">
+                            <table class="data-table" style="font-size: 0.75rem;">
+                                <thead>
+                                    <tr>
+                                        <th>Source</th>
+                                        <th>df</th>
+                                        <th>SS</th>
+                                        <th>MS</th>
+                                        <th>F</th>
+                                        <th>Significance F</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Regression</td>
+                                        <td id="anova-reg-df">-</td>
+                                        <td id="anova-reg-ss">-</td>
+                                        <td id="anova-reg-ms">-</td>
+                                        <td id="anova-f">-</td>
+                                        <td id="anova-sig-f">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Residual</td>
+                                        <td id="anova-res-df">-</td>
+                                        <td id="anova-res-ss">-</td>
+                                        <td id="anova-res-ms">-</td>
+                                        <td>–</td>
+                                        <td>–</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td id="anova-tot-df">-</td>
+                                        <td id="anova-tot-ss">-</td>
+                                        <td>–</td>
+                                        <td>–</td>
+                                        <td>–</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="padding: 12px 16px; background: #f9fafb; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-color);">
+                                Significance F &lt; 0.05 indicates that the regression model is statistically significant.
+                            </div>
+                        </div>
+                        <div id="residuals-plot" class="plot-container" style="display: none; margin-top: 20px; height: 300px;"></div>
+                    </div>
+
+                    <!-- === RIGHT COLUMN: COEFFICIENTS & INTERPRETATION === -->
+                    <div class="col-right flex-col">
+                        <div class="section-title">7. COEFFICIENTS TABLE</div>
+                        <div class="card p-0">
+                            <div style="overflow-x: auto;">
+                                <table class="data-table" style="font-size: 0.75rem;">
+                                    <thead>
+                                        <tr>
+                                            <th>Predictor</th>
+                                            <th>Coefficient</th>
+                                            <th>Std. Error</th>
+                                            <th>t Stat</th>
+                                            <th>P-value</th>
+                                            <th>Lower 95%</th>
+                                            <th>Upper 95%</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Intercept</td>
+                                            <td id="coef-int-val">-</td>
+                                            <td id="coef-int-se">-</td>
+                                            <td id="coef-int-t">-</td>
+                                            <td id="coef-int-p">-</td>
+                                            <td id="coef-int-low">-</td>
+                                            <td id="coef-int-up">-</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="coef-x-name">X Variable</td>
+                                            <td id="coef-x-val">-</td>
+                                            <td id="coef-x-se">-</td>
+                                            <td id="coef-x-t">-</td>
+                                            <td id="coef-x-p">-</td>
+                                            <td id="coef-x-low">-</td>
+                                            <td id="coef-x-up">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="section-title">8. INTERPRETATION</div>
+                        <div class="card">
+                            <div class="interp-item">
+                                <div class="interp-icon icon-green">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div>
+                                    <div class="interp-title green">Model Significance</div>
+                                    <div class="interp-text" id="interp-sig">Run analysis to generate interpretation.</div>
+                                </div>
+                            </div>
+                            <div class="interp-item">
+                                <div class="interp-icon icon-blue">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="16" y="4" width="4" height="16"/><rect x="10" y="10" width="4" height="10"/><rect x="4" y="14" width="4" height="6"/></svg>
+                                </div>
+                                <div>
+                                    <div class="interp-title blue">Goodness of Fit</div>
+                                    <div class="interp-text" id="interp-fit">-</div>
+                                </div>
+                            </div>
+                            <div class="interp-item">
+                                <div class="interp-icon icon-purple">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                </div>
+                                <div>
+                                    <div class="interp-title purple">Coefficients Interpretation</div>
+                                    <div class="interp-text" id="interp-coef">-</div>
+                                </div>
+                            </div>
+                            <div class="interp-item">
+                                <div class="interp-icon icon-orange">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                                </div>
+                                <div>
+                                    <div class="interp-title orange">Practical Interpretation</div>
+                                    <div class="interp-text" id="interp-prac">-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-title">9. PREDICTION</div>
+                        <div class="card flex-1">
+                            <div style="display: flex; gap: 12px; align-items: flex-end;">
+                                <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                    <label id="predict-x-label" style="font-weight: 500;">Enter Size (sq ft)</label>
+                                    <input type="number" id="predict-x-input" placeholder="2000">
+                                </div>
+                                <button id="predict-btn" class="btn btn-primary" style="width: auto; padding: 8px 16px; margin-bottom: 2px;">Predict Price</button>
+                            </div>
+                            <div class="prediction-box">
+                                <div>
+                                    <div class="pred-label">Predicted Price:</div>
+                                    <div class="pred-value" id="pred-y-val" style="font-weight: bold;">-</div>
+                                </div>
+                                <div>
+                                    <div class="pred-label" style="text-align: right;">95% Prediction Interval</div>
+                                    <div class="pred-interval" id="pred-interval-val" style="font-weight: bold; color: var(--text-main); font-size: 0.875rem;">(- / -)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-tip" style="background-color: #eff6ff; border: 1px solid #bfdbfe; margin-top: 24px; margin-bottom: 0;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                                <div style="color: #1e3a8a;"><strong>Tip:</strong><br>Ensure your data is clean and contains numeric values.</div>
+                            </div>
+                        </div>
+
+                    </div> <!-- End Right Col -->
+                </div> <!-- End Grid -->
+
+                <!-- === AD SIDEBAR === -->
+                <div class="ad-sidebar">
+                    <div class="ad-panel sidebar-ad-1">
+                        <div class="ad-title">Ad Panel<br>(Right Sidebar)</div>
+                        <div class="ad-size">300 x 600</div>
+                    </div>
+                    <div class="ad-panel sidebar-ad-2">
+                        <div class="ad-title">Ad Panel<br>(Right Bottom)</div>
+                        <div class="ad-size">300 x 250</div>
+                    </div>
+                </div>
+            </div> <!-- End Main Layout With Ads -->
+
+            <!-- Bottom Ad Panel -->
+            <div class="ad-panel banner-ad">
+                <div class="ad-title">Ad Panel (Bottom Banner)</div>
+                <div class="ad-size">728 x 90</div>
+            </div>
+            
+        </main>
+        
+        <footer style="text-align: center; padding: 20px; font-size: 0.75rem; color: var(--text-muted);">
+            Note: Linear regression assumes linearity, independence, homoscedasticity, and normality of residuals. Please validate these assumptions for better results.
+        </footer>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="https://unpkg.com/simple-statistics@7.9.0/dist/simple-statistics.min.js"></script>
+    <script src="https://unpkg.com/plotly.js-dist-min@3.6.0/plotly.min.js"></script>
+    <script src="https://unpkg.com/jstat@1.9.6/dist/jstat.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="src/js/main.js" type="module"></script>
+    <script src="tests/rigorous_validation.js" type="module"></script>
+</body>
+</html>
